@@ -7,5 +7,12 @@ declare module 'styled-components' {
       blue: string;
       white: string;
     };
+    breakpoints: {
+      xs: number;
+      sm: number;
+      md: number;
+      lg: number;
+      xl: number;
+    };
   }
 }
