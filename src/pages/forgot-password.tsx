@@ -17,15 +17,11 @@ import { useForm } from 'react-hook-form';
 import NextLink from 'next/link';
 
 const createUserFormSchema = yup.object().shape({
-  email: yup.string().required('E-mail obrigátorio').email('E-mail inválido'),
-  password: yup
-    .string()
-    .required('Senha obrigátoria')
-    .min(6, 'Mínimo 6 caracteres')
-    .max(32, 'Máximo 32 caracteres')
+  email: yup.string().required('E-mail obrigátorio').email('E-mail inválido')
 });
 
 import { ImageBox } from '../components/ImageBox/ImageBox';
+import { Title } from '../styles/pages/ForgoPasswordStyles';
 const Login: NextPage = () => {
   const {
     register,
@@ -41,6 +37,7 @@ const Login: NextPage = () => {
       <FormBox>
         <FormBoxContent>
           <Form onSubmit={handleSubmit(handleLogin)}>
+            <Title>Recuperação de Senha</Title>
             <Input
               register={register}
               error={errors.email}
@@ -48,27 +45,13 @@ const Login: NextPage = () => {
               type="email"
               placeholder="E-mail"
             />
-            <Input
-              register={register}
-              error={errors.password}
-              name="password"
-              type="password"
-              placeholder="Senha"
-            />
 
-            <Button>Entrar</Button>
-
-            <NextLink href="/forgot-password">
-              <AlreadyHaveAnAccountLink>
-                Esqueceu a senha ?
-              </AlreadyHaveAnAccountLink>
-            </NextLink>
+            <Button>Recuperar Senha</Button>
 
             <LinkBox>
-              <span>Ainda não possui uma conta ?</span>
-              <NextLink href="/signup">
+              <NextLink href="/login">
                 <AlreadyHaveAnAccountLink>
-                  Criar conta{' '}
+                  Voltar para Login
                 </AlreadyHaveAnAccountLink>
               </NextLink>
             </LinkBox>
