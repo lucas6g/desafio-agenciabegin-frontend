@@ -22,7 +22,10 @@ const createUserFormSchema = yup.object().shape({
 
 import { ImageBox } from '../components/ImageBox/ImageBox';
 import { Title } from '../styles/pages/ForgoPasswordStyles';
-const Login: NextPage = () => {
+import { useRouter } from 'next/router';
+const ForgotPassword: NextPage = () => {
+  const router = useRouter();
+
   const {
     register,
     handleSubmit,
@@ -31,12 +34,15 @@ const Login: NextPage = () => {
     resolver: yupResolver(createUserFormSchema)
   });
 
-  const handleLogin = (data: FieldValues) => console.log(data);
+  const handleForgoPassword = (data: FieldValues) => {
+    console.log(data);
+    router.push('/confirmation-code');
+  };
   return (
     <Container>
       <FormBox>
         <FormBoxContent>
-          <Form onSubmit={handleSubmit(handleLogin)}>
+          <Form onSubmit={handleSubmit(handleForgoPassword)}>
             <Title>Recuperação de Senha</Title>
             <Input
               register={register}
@@ -62,4 +68,4 @@ const Login: NextPage = () => {
     </Container>
   );
 };
-export default Login;
+export default ForgotPassword;
