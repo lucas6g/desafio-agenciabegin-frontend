@@ -24,7 +24,7 @@ const createUserFormSchema = yup.object().shape({
   password: yup
     .string()
     .required('Senha obrigátoria')
-    .min(6, 'Mínimo 6 caracteres')
+    .min(8, 'Mínimo 8 caracteres')
     .max(32, 'Máximo 32 caracteres')
 });
 

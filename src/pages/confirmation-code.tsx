@@ -13,7 +13,7 @@ import { ImageBox } from '../components/ImageBox/ImageBox';
 import {
   ConfirmationTokenInput,
   EmailBox
-} from '../styles/pages/ConfirmationCode';
+} from '../styles/pages/ConfirmationCodeStyles';
 import { FormEvent, useState } from 'react';
 const ConfirmationCode: NextPage = () => {
   const [token, setToken] = useState('');
