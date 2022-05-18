@@ -1,13 +1,26 @@
 import type { NextPage } from 'next';
-import { Container } from '../styles/pages/HomeStyles';
+import { BookCard } from '../components/BookCard/BookCard';
+import { BookPreview } from '../components/BookPreview/BookPreview';
+import { Header } from '../components/Header/Header';
+import { Container, MainContent } from '../styles/pages/HomeStyles';
 
 const Home: NextPage = () => {
   return (
-    <div>
-      <Container>
-        <h1>eaee</h1>
-      </Container>
-    </div>
+    <Container>
+      <Header />
+      <MainContent>
+        <BookCard />
+        <BookCard />
+        <BookCard />
+        <BookCard />
+        <BookCard />
+        <BookCard />
+        <BookCard />
+        <BookCard />
+        <BookCard />
+      </MainContent>
+      <BookPreview />
+    </Container>
   );
 };
 

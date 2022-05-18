@@ -15,8 +15,11 @@ import {
   EmailBox
 } from '../styles/pages/ConfirmationCodeStyles';
 import { FormEvent, useState } from 'react';
+import { useRouter } from 'next/router';
+
 const ConfirmationCode: NextPage = () => {
   const [token, setToken] = useState('');
+  const router = useRouter();
 
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
@@ -42,7 +45,9 @@ const ConfirmationCode: NextPage = () => {
               fields={6}
             />
 
-            <Button onClick={() => console.log(token)}>Recuperar Senha</Button>
+            <Button onClick={() => router.push('/reset-password')}>
+              Recuperar Senha
+            </Button>
           </Form>
         </FormBoxContent>
       </FormBox>
