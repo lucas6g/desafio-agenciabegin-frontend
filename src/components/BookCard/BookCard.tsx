@@ -19,7 +19,7 @@ export function BookCard({ hasCardOptions = false }: BookCardProps) {
   return (
     <Container>
       <BookImageBox>
-        <Image src="/images/clean.jpg" alt="se fude " />
+        <Image src="/images/livro.jpg" alt="se fude " />
       </BookImageBox>
       <BookInfoBox>
         <BookName>O Homem Mais Rico da Babilônia</BookName>

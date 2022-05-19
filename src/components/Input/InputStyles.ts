@@ -12,11 +12,7 @@ export const Container = styled.div<Container>`
   justify-content: center;
   font-size: 14px;
 
-  ${(props) =>
-    props.isErrored &&
-    css`
-      margin-bottom: 8px;
-    `}
+  ${(props) => props.isErrored && css``}
   label {
     ${(props) =>
       props.isErrored &&
@@ -26,7 +22,7 @@ export const Container = styled.div<Container>`
   }
   span {
     color: red;
-    font-size: 16px;
+    font-size: 14px;
     font-family: 'Roboto', serif;
   }
 `;
@@ -54,5 +50,6 @@ export const StyledInput = styled.input<StyledInputProps>`
     css`
       border-color: red;
       border-width: 2px;
+      min-height: 48px;
     `}
 `;

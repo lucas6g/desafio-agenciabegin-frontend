@@ -11,7 +11,10 @@ import {
 import Image from 'next/image';
 import { Button } from '../components/Button/Button';
 import { Tabs } from '../components/Tabs/Tabs';
+import { useRouter } from 'next/router';
 const Profile: NextPage = () => {
+  const router = useRouter();
+
   return (
     <Container>
       <Header>
@@ -27,7 +30,9 @@ const Profile: NextPage = () => {
         </NextLink>
 
         <ButtonsContainer>
-          <Button>Novo Livro</Button>
+          <Button onClick={() => router.push('/create-book')}>
+            Novo Livro
+          </Button>
           <Button>Nova Instituicao</Button>
           <Button>Perfil</Button>
           <Button className="icon-button">
