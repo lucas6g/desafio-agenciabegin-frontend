@@ -33,7 +33,9 @@ const Profile: NextPage = () => {
           <Button onClick={() => router.push('/create-book')}>
             Novo Livro
           </Button>
-          <Button>Nova Instituicao</Button>
+          <Button onClick={() => router.push('/register-institution')}>
+            Nova Instituicao
+          </Button>
           <Button>Perfil</Button>
           <Button className="icon-button">
             <MdLogout />
