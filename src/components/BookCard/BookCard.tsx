@@ -10,12 +10,14 @@ import {
 } from './BookCardStyles';
 
 import { MdDelete, MdEdit } from 'react-icons/md';
+import { useRouter } from 'next/router';
 
 type BookCardProps = {
   hasCardOptions?: boolean;
 };
 
 export function BookCard({ hasCardOptions = false }: BookCardProps) {
+  const router = useRouter();
   return (
     <Container>
       <BookImageBox>
@@ -27,7 +29,7 @@ export function BookCard({ hasCardOptions = false }: BookCardProps) {
       </BookInfoBox>
       {hasCardOptions && (
         <CardOptions>
-          <CardOptionsButton>
+          <CardOptionsButton onClick={() => router.push('/edit-book/id')}>
             <MdEdit />
           </CardOptionsButton>
           <CardOptionsButton>
